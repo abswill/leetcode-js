@@ -1,7 +1,7 @@
 {
   "name": "algorithm",
   "version": "1.0.0",
-  "description": "",
+  "description": "leetcode algorithm",
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",

@@ -9,21 +9,13 @@ module.exports = {
         lineNumbers: true
     },
     serviceWorker: true,
-    themeConfig: {    
+    themeConfig: {
         logo: '/egg.png',
+        base: '/leetcode-js/',
         lastUpdated: 'lastUpdate', // string | boolean
         nav: [
             { text: '首页', link: '/' },
-            {
-                text: '分类',
-                ariaLabel: '分类',
-                items: [
-                    { text: '文章', link: '/pages/folder1/test1.md' },
-                    { text: '琐碎', link: '/pages/folder2/test4.md' },
-                ]
-            },
-            { text: '功能演示', link: '/pages/folder1/test3.md' },
-            { text: 'Github', link: 'https://github.com/dwanda' },
+            { text: 'Github', link: 'https://github.com/abswill/abswill.github.io' },
         ],
         sidebar: {
             '/pages/folder1/':[
@@ -34,13 +26,6 @@ module.exports = {
                     children: [
                         ['test1.md', '子菜单1'],
                         ['test3.md', '子菜单2']
-                    ]
-                },
-                {
-                    title: '测试菜单2',
-                    collapsable: false, // 可选的, 默认值是 true,
-                    children: [
-                        ['test2.md', '子菜单1']
                     ]
                 }
             ],
