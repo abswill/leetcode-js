@@ -24,7 +24,7 @@ module.exports = {
                     collapsable: false, // 可选的, 默认值是 true,
                     sidebarDepth: 1,    // 可选的, 默认值是 1
                     children: [
-                        ['test1.md', '子菜单1'],
+                        ['01-1365.md', '【1365】有多少小于当前数字的数字'],
                         // ['test3.md', '子菜单2']
                     ]
                 }
