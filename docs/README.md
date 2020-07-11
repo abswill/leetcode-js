@@ -4,7 +4,7 @@ home: true
 heroText: 算法记录
 tagline: 一点一滴都是进步
 actionText: 马上进入 →
-actionLink: /pages/easy/01-1365.md
+actionLink: /pages/easy/e-1365.md
 features:
 # - title: 简洁至上
 #   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
