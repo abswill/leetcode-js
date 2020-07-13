@@ -25,6 +25,7 @@ module.exports = {
                     collapsable: false, // 可选的, 默认值是 true,
                     sidebarDepth: 1,    // 可选的, 默认值是 1
                     children: [
+                        ['e-01.md', '【01】两数之和'],
                         ['e-575.md', '【575】分糖果'],
                         ['e-1089.md', '【1089】复写零'],
                         ['e-1365.md', '【1365】有多少小于当前数字的数字']
