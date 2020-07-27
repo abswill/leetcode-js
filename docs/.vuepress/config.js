@@ -4,14 +4,14 @@ module.exports = {
     description: '算法记录', // meta 中的描述文字，用于SEO
     // 注入到当前页面的 HTML <head> 中的标签
     head: [
-        ['link', { rel: 'icon', href: '/FE.png' }],  //浏览器的标签栏的网页图标
+        ['link', { rel: 'icon', href: '/logo.png' }],  //浏览器的标签栏的网页图标
     ],
     markdown: {
         lineNumbers: true
     },
     serviceWorker: true,
     themeConfig: {
-        logo: '/FE.png',
+        logo: '/logo.png',
         // base: '/leetcode-js/',
         lastUpdated: 'lastUpdate', // string | boolean
         nav: [

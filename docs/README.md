@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /FE.png
+# heroImage: /logo.png
 heroText: 算法记录
 tagline: 一点一滴都是进步
 actionText: 马上进入 →
