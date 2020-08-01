@@ -1,3 +1,8 @@
+const path = require("path")
+const rootpath = path.dirname(__dirname) //执行一次dirname将目录定位到docs目录
+const utils = require('./utils/index.js');
+const filehelper = require('./utils/initPage.js');
+
 module.exports = {
     title: 'leetcode-js', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
     base: '/leetcode-js/',
@@ -16,27 +21,13 @@ module.exports = {
         lastUpdated: 'lastUpdate', // string | boolean
         nav: [
             { text: '首页', link: '/' },
+            { text: '简单难度', link: '/pages/easy/e-01.html' },
+            { text: '面试', link: '/pages/interview/itv-01.html' },
             { text: 'Github', link: 'https://github.com/abswill/leetcode-js' },
         ],
         sidebar: {
-            '/pages/easy/':[
-                {
-                    title: '简单难度',   // 必要的
-                    collapsable: false, // 可选的, 默认值是 true,
-                    sidebarDepth: 1,    // 可选的, 默认值是 1
-                    children: [
-                        ['e-01.md', '【01】两数之和'],
-                        ['e-225.md', '【225】用队列实现栈'],
-                        ['e-575.md', '【575】分糖果'],
-                        ['e-705.md', '【705】设计哈希集合'],
-                        ['e-905.md', '【905】按奇偶排序数组'],
-                        ['e-1089.md', '【1089】复写零'],
-                        ['e-1399.md', '【1399】统计最大组的数目'],
-                        ['e-1365.md', '【1365】有多少小于当前数字的数字'],
-                        ['e-1475.md', '【1475】商品折扣后的最终价格']
-                    ]
-                }
-            ],
+            '/pages/easy/': utils.genSidebar('简单难度', filehelper.getFileName(rootpath+"/pages/easy/"), false),
+            '/pages/interview/': utils.genSidebar('其他', filehelper.getFileName(rootpath+"/pages/interview/"), false)
         }
     }
 }
