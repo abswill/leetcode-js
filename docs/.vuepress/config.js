@@ -27,7 +27,7 @@ module.exports = {
         ],
         sidebar: {
             '/pages/easy/': utils.genSidebar('简单难度', filehelper.getFileName(rootpath+"/pages/easy/"), false),
-            '/pages/interview/': utils.genSidebar('其他', filehelper.getFileName(rootpath+"/pages/interview/"), false)
+            '/pages/interview/': utils.genSidebar('面试', filehelper.getFileName(rootpath+"/pages/interview/"), false)
         }
     }
 }
