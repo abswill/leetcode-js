@@ -1,19 +1,16 @@
 ---
 home: true
-# heroImage: /logo.png
 heroText: 算法记录
 tagline: 一点一滴都是进步
 actionText: 马上进入 →
 actionLink: /pages/easy/e-01.md
-features:
-# - title: 简洁至上
-#   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-# - title: Vue驱动
-#   details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-# - title: 高性能
-#   details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
 ---
-<!-- 
-<ClientOnly>
-  <BottomData/>
-</ClientOnly> -->
+
+## 前言
+
+目前作为IT开发人员，掌握算法已经变得越来越重要，以前对于算法的要求大部分偏向于后端同学，但是近年来发现算法对于前端的要求也越来越高，不是说前端的工作需要多少算法，但是前端同学掌握的算法知识越多，证明你对于数据结构的掌握就越好，处理数据的能力也就越强，自然会给自己的能力增色不少。
+
+这里的内容是根据leetcode官网的题目做的总结，专门针对前端同学的需求，用JS解答题目算法, 并且配备详细的题目讲解。
+
+## 章节划分
+题目类型的划分是多维度的，不仅仅局限于简单，中等，和困难，还有按照数据结构的内容来划分，包含栈，队列, 数等等。希望这里的内容对您学习算法带来帮助。
