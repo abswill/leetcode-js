@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1399 - 统计最大组的数目 | leetcode-js</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/leetcode-js/logo.png">
+    <meta name="description" content="算法记录">
+    <link rel="preload" href="/leetcode-js/assets/css/0.styles.f934208b.css" as="style"><link rel="preload" href="/leetcode-js/assets/js/app.fec4a9c3.js" as="script"><link rel="preload" href="/leetcode-js/assets/js/2.e2b1e7fb.js" as="script"><link rel="preload" href="/leetcode-js/assets/js/12.c7d3d4ab.js" as="script"><link rel="prefetch" href="/leetcode-js/assets/js/10.c527458c.js"><link rel="prefetch" href="/leetcode-js/assets/js/11.84e90cd0.js"><link rel="prefetch" href="/leetcode-js/assets/js/13.167f00a4.js"><link rel="prefetch" href="/leetcode-js/assets/js/14.aca1c6f9.js"><link rel="prefetch" href="/leetcode-js/assets/js/15.6b13f2e1.js"><link rel="prefetch" href="/leetcode-js/assets/js/16.cac6fa14.js"><link rel="prefetch" href="/leetcode-js/assets/js/17.e14387c8.js"><link rel="prefetch" href="/leetcode-js/assets/js/18.c31234d7.js"><link rel="prefetch" href="/leetcode-js/assets/js/3.56bb3df3.js"><link rel="prefetch" href="/leetcode-js/assets/js/4.326ff276.js"><link rel="prefetch" href="/leetcode-js/assets/js/5.c91b2928.js"><link rel="prefetch" href="/leetcode-js/assets/js/6.9e5c52b1.js"><link rel="prefetch" href="/leetcode-js/assets/js/7.8a9e25dd.js"><link rel="prefetch" href="/leetcode-js/assets/js/8.49d14824.js"><link rel="prefetch" href="/leetcode-js/assets/js/9.7fef6f14.js">
+    <link rel="stylesheet" href="/leetcode-js/assets/css/0.styles.f934208b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/leetcode-js/" class="home-link router-link-active"><img src="/leetcode-js/logo.png" alt="leetcode-js" class="logo"> <span class="site-name can-hide">leetcode-js</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/leetcode-js/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/leetcode-js/pages/easy/e-01.html" class="nav-link">
+  简单难度
+</a></div><div class="nav-item"><a href="/leetcode-js/pages/interview/itv-01.html" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="https://github.com/abswill/leetcode-js" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/leetcode-js/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/leetcode-js/pages/easy/e-01.html" class="nav-link">
+  简单难度
+</a></div><div class="nav-item"><a href="/leetcode-js/pages/interview/itv-01.html" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="https://github.com/abswill/leetcode-js" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>简单难度</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-js/pages/easy/e-01.html" class="sidebar-link">01 - 两数之和</a></li><li><a href="/leetcode-js/pages/easy/e-1089.html" class="sidebar-link">1089 - 复写零</a></li><li><a href="/leetcode-js/pages/easy/e-1365.html" class="sidebar-link">1365 - 有多少小于当前数字的数字</a></li><li><a href="/leetcode-js/pages/easy/e-1399.html" aria-current="page" class="active sidebar-link">1399 - 统计最大组的数目</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/leetcode-js/pages/easy/e-1399.html#_1399-统计最大组的数目" class="sidebar-link">1399 - 统计最大组的数目</a></li><li class="sidebar-sub-header"><a href="/leetcode-js/pages/easy/e-1399.html#题目描述" class="sidebar-link">题目描述</a></li><li class="sidebar-sub-header"><a href="/leetcode-js/pages/easy/e-1399.html#题目解析-方法一" class="sidebar-link">题目解析 方法一</a></li><li class="sidebar-sub-header"><a href="/leetcode-js/pages/easy/e-1399.html#题目解析-方法二" class="sidebar-link">题目解析 方法二</a></li></ul></li><li><a href="/leetcode-js/pages/easy/e-1475.html" class="sidebar-link">1475 - 商品折扣后的最终价格</a></li><li><a href="/leetcode-js/pages/easy/e-225.html" class="sidebar-link">225 - 用队列实现栈</a></li><li><a href="/leetcode-js/pages/easy/e-575.html" class="sidebar-link">575 - 分糖果</a></li><li><a href="/leetcode-js/pages/easy/e-705.html" class="sidebar-link">705 - 设计哈希集合</a></li><li><a href="/leetcode-js/pages/easy/e-905.html" class="sidebar-link">905 - 按奇偶排序数组</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_1399-统计最大组的数目"><a href="#_1399-统计最大组的数目" class="header-anchor">#</a> 1399 - 统计最大组的数目</h2> <blockquote><p>难度 - 简单</p></blockquote> <h2 id="题目描述"><a href="#题目描述" class="header-anchor">#</a> 题目描述</h2> <p>给你一个整数 n 。请你先求出从 1 到 n 的每个整数 10 进制表示下的数位和（每一位上的数字相加），然后把数位和相等的数字放到同一个组中。</p> <p>请你统计每个组中的数字数目，并返回数字数目并列最多的组有多少个。</p> <p>示例1:</p> <div class="language-markdown line-numbers-mode"><pre class="language-markdown"><code>输入：n = 13
+输出：4
+解释：总共有 9 个组，将 1 到 13 按数位求和后这些组分别是：
+[1,10]，[2,11]，[3,12]，[4,13]，[5]，[6]，[7]，[8]，[9]。总共有 4 个组拥有的数字并列最多。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>示例2:</p> <div class="language-markdown line-numbers-mode"><pre class="language-markdown"><code>输入：n = 2
+输出：2
+解释：总共有 2 个大小为 1 的组 [1]，[2]。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>示例3:</p> <div class="language-markdown line-numbers-mode"><pre class="language-markdown"><code>输入：n = 15
+输出：6
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>示例4:</p> <div class="language-markdown line-numbers-mode"><pre class="language-markdown"><code>输入：n = 24
+输出：5
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>提示：</p> <ul><li>1 &lt;= n &lt;= 10^4</li></ul> <h2 id="题目解析-方法一"><a href="#题目解析-方法一" class="header-anchor">#</a> 题目解析 方法一</h2> <p>解题思路: 哈希</p> <ol><li>写一个计算数位和的函数</li> <li>使用一个哈希表分别统计数位和相同的数字的出现次数，在这个过程中对比记录数字数目最多的值
+maxCount</li> <li>查看哈希表中等于 maxCount 的个数</li></ol> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">/**
+ * @param {number} n
+ * @return {number}
+ */</span>
+
+<span class="token keyword">var</span> <span class="token function-variable function">countLargestGroup</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">calculateSum</span> <span class="token operator">=</span> <span class="token parameter">num</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> strNum <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">,</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> strNum<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> c <span class="token operator">=</span> strNum<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      sum <span class="token operator">+=</span> <span class="token function">Number</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> maxCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> maxGroup <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token function">calculateSum</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">[</span>sum<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> map<span class="token punctuation">[</span>sum<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">[</span>sum<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+    maxCount <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>maxCount<span class="token punctuation">,</span> map<span class="token punctuation">[</span>sum<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> map<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">===</span> maxCount<span class="token punctuation">)</span> maxGroup <span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">return</span> maxGroup<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h2 id="题目解析-方法二"><a href="#题目解析-方法二" class="header-anchor">#</a> 题目解析 方法二</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">/**
+ * @param {number} n
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">countLargestGroup</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> max<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>count<span class="token operator">=</span><span class="token number">0</span>
+    <span class="token keyword">let</span> allArr<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">let</span> m<span class="token operator">=</span>i<span class="token punctuation">,</span>sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>scount<span class="token operator">=</span><span class="token number">1</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>m<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            sum<span class="token operator">+=</span>m<span class="token operator">%</span><span class="token number">10</span>
+            m<span class="token operator">=</span><span class="token function">parseInt</span><span class="token punctuation">(</span>m<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>allArr<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            scount<span class="token operator">=</span>allArr<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
+        <span class="token punctuation">}</span>
+        max<span class="token operator">=</span>max<span class="token operator">&gt;</span>scount<span class="token operator">?</span>max<span class="token operator">:</span>scount
+        allArr<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>sum<span class="token punctuation">,</span>scount<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> item <span class="token keyword">of</span> allArr<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token operator">==</span>max<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> count
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">lastUpdate:</span> <span class="time">7/21/2020, 5:05:49 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/leetcode-js/pages/easy/e-1365.html" class="prev">
+        1365 - 有多少小于当前数字的数字
+      </a></span> <span class="next"><a href="/leetcode-js/pages/easy/e-1475.html">
+        1475 - 商品折扣后的最终价格
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/leetcode-js/assets/js/app.fec4a9c3.js" defer></script><script src="/leetcode-js/assets/js/2.e2b1e7fb.js" defer></script><script src="/leetcode-js/assets/js/12.c7d3d4ab.js" defer></script>
+  </body>
+</html>
